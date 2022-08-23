@@ -4,15 +4,13 @@ const routerProductos = express.Router();
 const DB_PRODUCTOS = [];
 
 
-routerProductos.get( "/", (req, res, next) => {
+routerProductos.get( "/", (req, res) => {
     res.render('vista', {DB_PRODUCTOS});
-    next();
 });
 
-routerProductos.post( "/productos", (req, res, next) => {
+routerProductos.post( "/productos", (req, res) => {
   DB_PRODUCTOS.push(req.body);
   res.redirect('/');
-
 });
 
 
